@@ -1,5 +1,4 @@
 # Project-1
-Dating app based off of restaurant preferences
 
 I AM  an individual who is famished
 I WANT see my preferred food options available to me
