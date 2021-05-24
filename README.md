@@ -1,8 +1,8 @@
 # Project-1
 
-I AM  an individual who is famished
-I WANT see my preferred food options available to me
-SO THAT I can order from the comfort of my home
+I AM  an individual who is famished  
+I WANT see my preferred food options available to me  
+SO THAT I can order from the comfort of my home  
 
 
 
