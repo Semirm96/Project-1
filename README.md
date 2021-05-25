@@ -25,3 +25,5 @@ WHEN I click on the MAP
 THEN a List of my Preferred resturants pop-up on my window  
 WHEN I Choose my resturant  
 THEN I am redirected to the resturants website
+
+test
