@@ -1,0 +1,3 @@
+/*
+Main script to handle restaurant information
+*/
