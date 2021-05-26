@@ -1,3 +1,55 @@
 /*
 common CSS file 
 */
+
+/*
+Menu CSS styling
+*/
+
+h1 {
+    color: red;
+}
+
+
+#menu-placeholder {
+ /* background-color: green;*/
+ border-bottom: 2px;
+ /* border-color: black;*/
+  width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow:hidden; /*Important for the DIV background, investigate*/
+    border-bottom: 4px rgb(51, 28, 185) solid;
+    /*background-color:rgb(177, 167, 236); */
+  }
+  
+  li {
+    float:left;
+    background-color:rgb(125, 109, 218);
+    margin-right: 10px;
+  }
+
+  li a {
+      display:inline-block;
+      color : white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+
+  }
+
+  li:hover:not(.active) {
+      background-color:rgb(213, 210, 228);
+  }
+
+  .active {
+  background-color:rgb(51, 28, 185);
+  }
+
+  /*
+
+  */
