@@ -1,7 +1,9 @@
 /*
 common CSS file 
 */
-
+body {
+    background-color:rgb(241, 241, 247); /* whole page bg color*/
+}
 /*
 Menu CSS styling
 */
@@ -19,12 +21,12 @@ ul {
     margin: 0;
     padding: 0;
     overflow:hidden; /*Important for the DIV background, investigate*/
-    border-bottom: 4px rgb(51, 28, 185) solid;
+    border-bottom: 4px rgb(51, 28, 185) solid; /* underline menu color*/
   }
   
   li {
     float:left;
-    background-color:rgb(125, 109, 218);
+    background-color:rgb(158, 149, 209); /*deselected menu*/
     margin-right: 10px;
   }
 
@@ -36,12 +38,17 @@ ul {
       text-decoration: none;
   }
 
+  /*
+  Example of CSS selectors in this link:
+  https://www2.cs.sfu.ca/CourseCentral/165/common/study-guide/content/css-selectors.html
+
+  */
   li:hover:not(.active) {
-      background-color:rgb(213, 210, 228);
+      background-color:rgb(200, 195, 223); /* menu hover color*/
   }
 
   .active {
-  background-color:rgb(51, 28, 185);
+  background-color:rgb(51, 28, 185); /*active page menu color*/
   }
 
   /*
