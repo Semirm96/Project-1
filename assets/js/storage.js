@@ -34,7 +34,6 @@ function getFromSession() {
     } catch (err) {
         console.log("Error reading from sessionStorage...")
     }
-
 }
 
 function setToSession() {
@@ -43,5 +42,4 @@ function setToSession() {
     } catch (err) {
         console.log("Error saving to sessionStorage...")
     }
-
 }
