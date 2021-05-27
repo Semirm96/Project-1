@@ -11,7 +11,7 @@ let navHTML;
 function createMenu() {
     let menu = $("<ul>");
 
-    //
+    // profile menu item
     let lipro = $("<li>");
     lipro.attr("id", "profilemenu");
     let apro = $("<a>");
@@ -19,7 +19,7 @@ function createMenu() {
     apro.attr("href", "profile.html")
     lipro.append(apro);
 
-    //
+    //preferences menu item
     let lipre = $("<li>");
     lipre.attr("id", "preferencesmenu");
     let apre = $("<a>");
@@ -27,7 +27,7 @@ function createMenu() {
     apre.attr("href", "preferences.html")
     lipre.append(apre);
 
-    //
+    // favorites menu item
     let lifav = $("<li>");
     lifav.attr("id", "favoritesmenu");
     let afav = $("<a>");
@@ -35,7 +35,7 @@ function createMenu() {
     afav.attr("href", "favorites.html")
     lifav.append(afav);
 
-    //
+    // logout menu item
     let lilogout = $("<li>");
     // no id needed for this menu item
     let alogout = $("<a>");
