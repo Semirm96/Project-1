@@ -9,7 +9,7 @@ localStorage save and retrieval
 // get from localStorage
 function getFromLocal(objName) {
     try {
-        var retrievedObject = localStorage.getItem(objName);
+        return  localStorage.getItem(objName);
     } catch (err) {
         // check type of exception
         console.log("Error reading from localStorage...")
@@ -30,7 +30,7 @@ sessionStorage save and retrieval
 */
 function getFromSession() {
     try {
-
+        return  sessionStorage.getItem(objName);
     } catch (err) {
         console.log("Error reading from sessionStorage...")
     }
@@ -39,7 +39,7 @@ function getFromSession() {
 
 function setToSession() {
     try {
-        
+        sessionStorage.setItem(objName, JSON.stringify(obj));
     } catch (err) {
         console.log("Error saving to sessionStorage...")
     }
