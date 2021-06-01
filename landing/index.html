@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF -8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="login.js"></script>
+</head>
+
+<body>
+    <main id="blank">
+        <h1 id="header">Login</h1>
+        
+        <form>
+            <!--username input-->
+            <label for="Username">Username</label>
+            <input type="text" name="username" id="user" class="loginBox" placeholder="Username">
+            <!--Password input-->
+            <label for="Password">Password</label>
+            <input type="password" name="psw" id="psw" class="loginBox" placeholder="Password">
+            <input type="submit" value="Login" id="loginComp">
+            <!--Link to Sign up page -->
+            <a href="#">Don't have an Account? Sign up...</a>
+        </form>
+        <div id="invalidLoginBox">
+            <p id="invalidLogin">Invalid Username or Password</p>
+        </div>
+
+        
+    </main>
+
+
+</body>
+</html>
