@@ -6,10 +6,12 @@ Storage functonality for localStorage and sessionStorage
 localStorage save and retrieval
 */
 
+var obj = [1, 2, 3, 4];
+var obj2;
 // get from localStorage
 function getFromLocal(objName) {
     try {
-        return  localStorage.getItem(objName);
+        return  JSON.parse(localStorage.getItem(objName));
     } catch (err) {
         // check type of exception
         console.log("Error reading from localStorage...")
@@ -18,6 +20,7 @@ function getFromLocal(objName) {
 
 // save to local Storage
 function setToLocal(obj, objName) {
+    debugger;
     try {
         localStorage.setItem(objName, JSON.stringify(obj));
     } catch (err) {
@@ -28,9 +31,9 @@ function setToLocal(obj, objName) {
 /*
 sessionStorage save and retrieval
 */
-function getFromSession() {
+function getFromSession(objName) {
     try {
-        return  sessionStorage.getItem(objName);
+        return  JSON.parse(sessionStorage.getItem(objName));
     } catch (err) {
         console.log("Error reading from sessionStorage...")
     }
