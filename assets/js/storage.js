@@ -6,8 +6,11 @@ Storage functonality for localStorage and sessionStorage
 localStorage save and retrieval
 */
 
+/* varaibles used to test storage functionality
 var obj = [1, 2, 3, 4];
 var obj2;
+*/
+
 // get from localStorage
 function getFromLocal(objName) {
     try {
@@ -28,6 +31,12 @@ function setToLocal(obj, objName) {
     }
 }
 
+/*  Test code to save and retrieves from localStorage
+
+setToLocal(obj, "localObj");
+obj2 = getFromLocal("localObj");
+*/
+
 /*
 sessionStorage save and retrieval
 */
@@ -46,3 +55,9 @@ function setToSession(obj, objName) {
         console.log("Error saving to sessionStorage...")
     }
 }
+
+/* Test code to save and retrieve to Session Storage
+
+setToSession(obj, "sessionObj");
+obj2 = getFromSession("sessionObj");
+*/
