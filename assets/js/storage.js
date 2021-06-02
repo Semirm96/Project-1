@@ -36,7 +36,7 @@ function getFromSession() {
     }
 }
 
-function setToSession() {
+function setToSession(obj, objName) {
     try {
         sessionStorage.setItem(objName, JSON.stringify(obj));
     } catch (err) {
