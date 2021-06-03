@@ -15,8 +15,8 @@ var obj2;
 https://stackoverflow.com/questions/2799283/use-a-json-array-with-objects-with-javascript
 */
 //user account variables
-var user = { "user": "", "pswd": "" };
-var useraccounts = [{ "user": "1", "pswd": "a" }, { "user": "2", "pswd": "b" }];
+var user = { "name": "", "userName": "", "email": "", "pswd": "" };
+var userAccounts = [{ "user": "1", "pswd": "a" }, { "user": "2", "pswd": "b" }];
 
 
 // get from localStorage
@@ -69,12 +69,30 @@ setToSession(obj, "sessionObj");
 obj2 = getFromSession("sessionObj");
 */
 
-//login and signup storage utility gfunctions
-function storeuser(usr, pswd){
-    localStorage.setItem("user")
-    localStorage.setItem("psw")
-};
+//login and signup storage utility functions
+
+function getUsers() {
+    try {
+        let val = JSON.parse(getFromLocal("userAccounts"));
+        if (val != undefined) {
+            userAccounts = val;
+        }
+    } catch (err) {
+        
+    }
+}
 
 function storeUsers() {
-    setToLocal("useraccounts", useraccounts);
+    setToLocal("userAccounts", userAccounts);
+};
+
+function addUser(name, usrName,email, pswd) {
+    let newUsr = user;
+
+    newUsr.name = name;
+    newUsr.userName = usrName;
+    newUsr.email = email;
+    newUsr.pswd = pswd;
+
+    userAccounts.push(newUsr);
 };
