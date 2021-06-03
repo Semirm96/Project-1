@@ -6,7 +6,7 @@ Storage functonality for localStorage and sessionStorage
 localStorage save and retrieval
 */
 
-/* varaibles used to test storage functionality
+/* variables used to test storage functionality
 var obj = [1, 2, 3, 4];
 var obj2;
 */
