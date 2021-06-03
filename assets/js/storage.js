@@ -6,10 +6,18 @@ Storage functonality for localStorage and sessionStorage
 localStorage save and retrieval
 */
 
-/* variables used to test storage functionality
+/* -- DELETE -- variables used to test storage functionality
 var obj = [1, 2, 3, 4];
 var obj2;
 */
+
+/* learn about json objects in javascript here:
+https://stackoverflow.com/questions/2799283/use-a-json-array-with-objects-with-javascript
+*/
+//user account variables
+var user = { "user": "", "pswd": "" };
+var useraccounts = [{ "user": "1", "pswd": "a" }, { "user": "2", "pswd": "b" }];
+
 
 // get from localStorage
 function getFromLocal(objName) {
@@ -22,8 +30,7 @@ function getFromLocal(objName) {
 }
 
 // save to local Storage
-function setToLocal(obj, objName) {
-    debugger;
+function setToLocal(objName, obj) {
     try {
         localStorage.setItem(objName, JSON.stringify(obj));
     } catch (err) {
@@ -31,7 +38,7 @@ function setToLocal(obj, objName) {
     }
 }
 
-/*  Test code to save and retrieves from localStorage
+/* -- DELETE -- Test code to save and retrieves from localStorage
 
 setToLocal(obj, "localObj");
 obj2 = getFromLocal("localObj");
@@ -48,7 +55,7 @@ function getFromSession(objName) {
     }
 }
 
-function setToSession(obj, objName) {
+function setToSession(objName, obj ) {
     try {
         sessionStorage.setItem(objName, JSON.stringify(obj));
     } catch (err) {
@@ -56,8 +63,18 @@ function setToSession(obj, objName) {
     }
 }
 
-/* Test code to save and retrieve to Session Storage
+/* -- DELETE -- Test code to save and retrieve to Session Storage
 
 setToSession(obj, "sessionObj");
 obj2 = getFromSession("sessionObj");
 */
+
+//login and signup storage utility gfunctions
+function storeuser(usr, pswd){
+    localStorage.setItem("user")
+    localStorage.setItem("psw")
+};
+
+function storeUsers() {
+    setToLocal("useraccounts", useraccounts);
+};
