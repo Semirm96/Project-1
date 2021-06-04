@@ -21,6 +21,7 @@ function verifyLogin(id, pswd) {
         }
     };
 
+    // no user logged in report it in menu area
     return false;
 }
 

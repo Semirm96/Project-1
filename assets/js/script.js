@@ -67,8 +67,15 @@ function insertMenu() {
     // add user name to top-right menu area
     $("#menu-placeholder").append(userLogged);
      // set tet from user logged in  
-     try{
-        $("#userLogged").text(getFromSession("loggedIn"));
+    try {
+         
+        let logged = getFromSession("loggedIn");
+         
+         if (logged === null) {
+             $("#userLogged").text("NO USER LOGGED,DEBUG MODE !!!!");
+         } else {
+           $("#userLogged").text(logged);  
+         }
     }catch(err){
         // should not come here
     }
