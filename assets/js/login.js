@@ -36,8 +36,10 @@ loginButton.addEventListener("click", (e) => {
         window.location.assign("profile.html")
         return true;
     } else {
-
+        
         alert("Login was unsuccessful, please register or check your username and password");
+        loginInvalid.innerText ="invalid login, please try again....";
+        setTimeout(function(){ window.location.assign("index.html") }, 2500);
         return false;
     }
 });

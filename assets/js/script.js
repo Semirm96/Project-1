@@ -72,7 +72,7 @@ function insertMenu() {
         let logged = getFromSession("loggedIn");
          
          if (logged === null) {
-             $("#userLogged").text("NO USER LOGGED,DEBUG MODE !!!!");
+             $("#userLogged").text("NO USER LOGGED, DEBUG MODE !!!!");
          } else {
            $("#userLogged").text(logged);  
          }
