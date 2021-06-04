@@ -1,5 +1,7 @@
 
+/*
 document.getElementById("button").addEventListener("click", createAccnt);
+*/
 
 function isUserRegistered(user) {
     var found = false;
@@ -9,6 +11,7 @@ function isUserRegistered(user) {
             break;
         }
     }
+    return found;
 }
 
 function createAccnt() {
@@ -27,13 +30,13 @@ function createAccnt() {
     https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
     */
     // Minimum eight characters, at least one letter and one number:
-    let pswExp = /(a - z, A - Z, 0 -9_)(a - zA - Z0 - 9\-)(?=.*? [# ? !@$%^&* -])/;
+    let pswExp = /(a-z,A-Z,0-9_)(a-zA-Z0-9\-)(?=.*? [# ? !@$%^&* -])/;
     /*/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;*/
 
-    let letters = [A - Za - z] + $;
+    let letters = /[a-zA-Z0-9_][a-zA-Z0-9_ ]*[a-zA-Z0-9_]$/;
     let charec = /(a-z,A-Z,0-9_)(a-zA-Z0-9\-)(?=.*?[#?!@$%^&*-])/;
 
-
+/*
     if (fullName == "") {
         alert('Name needed');
         valid = false;
@@ -87,13 +90,23 @@ function createAccnt() {
         alert('Password max length is 12');
         valid = false;
     }
-
+*/
     if (valid) {
         
         if (!isUserRegistered(user)) {
             addUser(fullName, user, email, pwd);
+            // print success and, after a few second, redirect to login
+            $("#signupMsg").css("color","blue");;
+            $("#signupMsg").text("Sign up successful.  Welcome " + fullName + "!!!.  Redirecting to login...");
+            
+            setTimeout(function(){ window.location.assign("index.html") }, 3000);
         } else {
-            alert("User already registered.");
+            //alert("User already registered.");
+            // print success and, after a few second, redirect to login
+            $("#signupMsg").css("color","red");;
+            $("#signupMsg").text("User already registered.");
+            
+            setTimeout(function(){ window.location.assign("signup.html") }, 3000);
         }
     }
 }
