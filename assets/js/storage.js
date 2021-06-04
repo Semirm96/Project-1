@@ -16,7 +16,7 @@ https://stackoverflow.com/questions/2799283/use-a-json-array-with-objects-with-j
 */
 //user account variables
 var user = { "name": "", "user": "", "email": "", "pswd": "" };
-var userAccounts = [];
+var userAccounts = {};
 
 
 // get from localStorage
@@ -36,6 +36,10 @@ function setToLocal(objName, obj) {
     } catch (err) {
         console.log("Error saving to localStorage...");
     }
+}
+
+function removeFromLocal(objName) {
+    localStorage.removeItem(objName);
 }
 
 /* -- DELETE -- Test code to save and retrieves from localStorage
@@ -63,6 +67,10 @@ function setToSession(objName, obj ) {
     }
 }
 
+function removeFromSession(objName) {
+    sessionStorage.removeItem(objName);
+}
+
 /* -- DELETE -- Test code to save and retrieve to Session Storage
 
 setToSession(obj, "sessionObj");
@@ -70,17 +78,27 @@ obj2 = getFromSession("sessionObj");
 */
 
 //login and signup storage utility functions
-
+/* 
+https://stackoverflow.com/questions/43762363/how-to-store-an-array-of-objects-in-local-storage
+*/
 function getUsers() {
     try {
-        let val = JSON.parse(getFromLocal("userAccounts"));
-        if (val != undefined) {
-            userAccounts = val;
+        let session = getFromSession("useraccounts")
+        if (session != null) {
+            let val = session;
+            if (val != undefined) {
+                userAccounts = val;
+            }
+        } else {
+            userAccounts = [];
         }
     } catch (err) {
         
     }
 }
+
+// get users from storage
+getUsers();
 
 function storeUsers() {
     setToLocal("userAccounts", userAccounts);
@@ -90,9 +108,10 @@ function addUser(name, usrName,email, pswd) {
     let newUsr = user;
 
     newUsr.name = name;
-    newUsr.userName = usrName;
+    newUsr.user = usrName;
     newUsr.email = email;
     newUsr.pswd = pswd;
 
     userAccounts.push(newUsr);
+    setToSession("useraccounts", userAccounts);
 };

@@ -7,12 +7,16 @@ const loginButton = document.getElementById("loginComp")
 const loginInvalid = document.getElementById("invalidLogin")
 
 function verifyLogin(id, pswd) {
-    let accounts = getFromLocal("useraccounts");
+    let accounts = getFromSession("useraccounts");
+
+    if ( (accounts === null) || (accounts.lenght === 0)) {
+        return false;
+    }
 
     for (let i = 0; i < accounts.length; i++) {
         if (accounts[i].user === id && accounts[i].pswd === pswd) {
             // set the userID only as value for loggedIN in sessionStorage
-            setToSession("loggedIn", accounts[i][0]);
+            setToSession("loggedIn", accounts[i].user);
             return true;
         }
     };
@@ -32,7 +36,7 @@ loginButton.addEventListener("click", (e) => {
         return true;
     } else {
 
-        alert("Login was unsuccessful, please check your username and password");
+        alert("Login was unsuccessful, please register or check your username and password");
         return false;
     }
 });

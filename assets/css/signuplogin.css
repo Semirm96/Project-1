@@ -14,5 +14,6 @@ Login and signup CS styling
 }
 
 #entry {
-
+    display:flex;
+    flex-direction: column;
 }

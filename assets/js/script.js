@@ -41,6 +41,7 @@ function createMenu() {
     let alogout = $("<a>");
     alogout.text("Logout");
     alogout.attr("href", "index.html")
+    alogout.attr("onclick","return logoutUser();")
     lilogout.append(alogout);
 
     menu.append(lipro)
@@ -82,3 +83,8 @@ function insertMenu() {
 
 insertMenu();
 
+
+function logoutUser() {
+    removeFromSession("loggedIn");
+    return true;
+}
