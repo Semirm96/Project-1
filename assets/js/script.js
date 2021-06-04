@@ -66,7 +66,11 @@ function insertMenu() {
     // add user name to top-right menu area
     $("#menu-placeholder").append(userLogged);
      // set tet from user logged in  
-    $("#userLogged").text(getFromSession("loggedIn"));
+     try{
+        $("#userLogged").text(getFromSession("loggedIn"));
+    }catch(err){
+        // should not come here
+    }
     
     // After the menu load is complete we can work with the navigation items
     // Set the active menu item based on the name of the page

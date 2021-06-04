@@ -15,8 +15,8 @@ var obj2;
 https://stackoverflow.com/questions/2799283/use-a-json-array-with-objects-with-javascript
 */
 //user account variables
-var user = { "name": "", "userName": "", "email": "", "pswd": "" };
-var userAccounts = [{ "user": "1", "pswd": "a" }, { "user": "2", "pswd": "b" }];
+var user = { "name": "", "user": "", "email": "", "pswd": "" };
+var userAccounts = [];
 
 
 // get from localStorage

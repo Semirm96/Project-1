@@ -10,7 +10,7 @@ function verifyLogin(id, pswd) {
     let accounts = getFromLocal("useraccounts");
 
     for (let i = 0; i < accounts.length; i++) {
-        if (accounts[i][0] === id && accounts[i][1] === pswd) {
+        if (accounts[i].user === id && accounts[i].pswd === pswd) {
             // set the userID only as value for loggedIN in sessionStorage
             setToSession("loggedIn", accounts[i][0]);
             return true;
