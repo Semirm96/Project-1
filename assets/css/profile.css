@@ -1,0 +1,39 @@
+
+#profileForm
+
+#profileData{
+    display:flex;
+    flex-direction: row;
+    margin-top:20px;
+}
+
+#userImg {
+    flex:1;
+}
+
+#profileitems {
+    flex:5;
+  margin: 0;
+  padding:0;
+}
+
+.profileInput {
+  size:40;
+}
+
+#profileData ul {
+     list-style-type: none;
+     padding-left:20px;
+     padding: 10px;
+     margin:0px;
+}
+
+#profileData ul li {
+ margin-bottom:5px;
+}
+
+#usreditBtn {
+    margin-top:15px;
+  width: 200px;
+  border-radius: 5px;;
+}
