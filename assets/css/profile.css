@@ -1,10 +1,15 @@
 
-#profileForm
+#profileForm {
+    display:flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+}
 
 #profileData{
     display:flex;
     flex-direction: row;
-    margin-top:20px;
+    margin-top:15px;
 }
 
 #userImg {
@@ -29,7 +34,7 @@
 }
 
 #profileData ul li {
- margin-bottom:5px;
+ margin-bottom:2px;
 }
 
 #usreditBtn {
