@@ -12,7 +12,10 @@ h1 {
 }
 
 #menu-placeholder {
- border-bottom: 2px;
+    display:flex;
+    justify-content: space-between;
+ /*border-bottom: 2px;*/
+ border-bottom: 4px rgb(51, 28, 185) solid;
   width: 100%;
 }
 
@@ -21,7 +24,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow:hidden; /*Important for the DIV background, investigate*/
-    border-bottom: 4px rgb(51, 28, 185) solid; /* underline menu color*/
+    /*border-bottom: 4px rgb(51, 28, 185) solid;  underline menu color*/
   }
   
   li {
@@ -51,6 +54,11 @@ ul {
   background-color:rgb(51, 28, 185); /*active page menu color*/
   }
 
+  #userLogged{
+    align-self: center;
+    color:blue;
+    font-size: 18px;
+  }
   /*
 
   */

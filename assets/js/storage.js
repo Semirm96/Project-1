@@ -6,10 +6,18 @@ Storage functonality for localStorage and sessionStorage
 localStorage save and retrieval
 */
 
-/* varaibles used to test storage functionality
+/* -- DELETE -- variables used to test storage functionality
 var obj = [1, 2, 3, 4];
 var obj2;
 */
+
+/* learn about json objects in javascript here:
+https://stackoverflow.com/questions/2799283/use-a-json-array-with-objects-with-javascript
+*/
+//user account variables
+var user = { "name": "", "user": "", "email": "", "pswd": "" };
+var userAccounts = {};
+
 
 // get from localStorage
 function getFromLocal(objName) {
@@ -22,8 +30,7 @@ function getFromLocal(objName) {
 }
 
 // save to local Storage
-function setToLocal(obj, objName) {
-    debugger;
+function setToLocal(objName, obj) {
     try {
         localStorage.setItem(objName, JSON.stringify(obj));
     } catch (err) {
@@ -31,7 +38,11 @@ function setToLocal(obj, objName) {
     }
 }
 
-/*  Test code to save and retrieves from localStorage
+function removeFromLocal(objName) {
+    localStorage.removeItem(objName);
+}
+
+/* -- DELETE -- Test code to save and retrieves from localStorage
 
 setToLocal(obj, "localObj");
 obj2 = getFromLocal("localObj");
@@ -48,7 +59,7 @@ function getFromSession(objName) {
     }
 }
 
-function setToSession(obj, objName) {
+function setToSession(objName, obj ) {
     try {
         sessionStorage.setItem(objName, JSON.stringify(obj));
     } catch (err) {
@@ -56,8 +67,51 @@ function setToSession(obj, objName) {
     }
 }
 
-/* Test code to save and retrieve to Session Storage
+function removeFromSession(objName) {
+    sessionStorage.removeItem(objName);
+}
+
+/* -- DELETE -- Test code to save and retrieve to Session Storage
 
 setToSession(obj, "sessionObj");
 obj2 = getFromSession("sessionObj");
 */
+
+//login and signup storage utility functions
+/* 
+https://stackoverflow.com/questions/43762363/how-to-store-an-array-of-objects-in-local-storage
+*/
+function getUsers() {
+    try {
+        let session = getFromSession("useraccounts")
+        if (session != null) {
+            let val = session;
+            if (val != undefined) {
+                userAccounts = val;
+            }
+        } else {
+            userAccounts = [];
+        }
+    } catch (err) {
+        
+    }
+}
+
+// get users from storage
+getUsers();
+
+function storeUsers() {
+    setToLocal("userAccounts", userAccounts);
+};
+
+function addUser(name, usrName,email, pswd) {
+    let newUsr = user;
+
+    newUsr.name = name;
+    newUsr.user = usrName;
+    newUsr.email = email;
+    newUsr.pswd = pswd;
+
+    userAccounts.push(newUsr);
+    setToSession("useraccounts", userAccounts);
+};

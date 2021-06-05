@@ -41,6 +41,7 @@ function createMenu() {
     let alogout = $("<a>");
     alogout.text("Logout");
     alogout.attr("href", "index.html")
+    alogout.attr("onclick","return logoutUser();")
     lilogout.append(alogout);
 
     menu.append(lipro)
@@ -55,7 +56,30 @@ navHTML = createMenu();
 
 function insertMenu() {
     $("#menu-placeholder").append(navHTML)
+    
+    let usrImg = $("<img>");
+    usrImg.attr("id", "menuUsrImg");
+    $("#menu-placeholder").append(usrImg);
 
+    let userLogged = $("<text>");
+    userLogged.attr("id", "userLogged");
+   
+    // add user name to top-right menu area
+    $("#menu-placeholder").append(userLogged);
+     // set tet from user logged in  
+    try {
+         
+        let logged = getFromSession("loggedIn");
+         
+         if (logged === null) {
+             $("#userLogged").text("NO USER LOGGED, DEBUG MODE !!!!");
+         } else {
+           $("#userLogged").text(logged);  
+         }
+    }catch(err){
+        // should not come here
+    }
+    
     // After the menu load is complete we can work with the navigation items
     // Set the active menu item based on the name of the page
     var fileName = location.pathname.split("/").slice(-1)[0].split(".")[0];
@@ -66,3 +90,8 @@ function insertMenu() {
 
 insertMenu();
 
+
+function logoutUser() {
+    removeFromSession("loggedIn");
+    return true;
+}

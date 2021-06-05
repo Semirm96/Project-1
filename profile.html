@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile-PrefRest</title>
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script>
+        /*
+        https://stackoverflow.com/questions/33137525/redirect-user-if-not-logged-in-in-html-with-jquery
+        https://stackoverflow.com/questions/35292378/check-if-user-has-logged-in-on-client-side
+      
+        variable in sessionStorage to maintain only in this session.
+        check if variable is not present OR is "false" to redirect to login.
+        If var is present and "true", then user is logged in and can continue.
+        */
+        if ((sessionStorage.getItem("loggedIn") === null) ||
+            (sessionStorage.getItem("loggedIn") === "false")) {
+            /*
+            TODO: print message and relocate to login screen
+            https://stackoverflow.com/questions/18305258/display-message-before-redirect-to-other-page
+            */
+            // not logged in,  redirect user to signup/login page
+            if (confirm("NO user is logged in !!!!\nPress OK to continue to profile \nor CANCEL to debug login page")) {
+                console.log("You pressed Cancel!");
+            } else {
+                document.location.replace("index.html");
+            }
+        }
+    </script>
 </head>
+
 <body>
     <!-- https://stackoverflow.com/questions/31954089/how-can-i-reuse-a-navigation-bar-on-multiple-pages
     -->
     <div id="menu-placeholder"></div>
-   
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./assets/js/script.js"></script>
     <script src="./assets/js/storage.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
