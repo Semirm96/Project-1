@@ -100,7 +100,7 @@ function getUsers() {
 getUsers();
 
 function storeUsers() {
-    setToLocal("userAccounts", userAccounts);
+    setToSession("useraccounts", userAccounts);
 };
 
 function addUser(name, usrName,email, pswd) {

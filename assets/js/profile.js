@@ -11,7 +11,8 @@ const confPswdIn = document.getElementById("confpswdinput");
 const editSaveBtn = document.getElementById("usreditBtn");
 let editMode = false;
 
-fetchAccountEntry(id){
+function fetchAccountEntry() {
+    let id = getFromSession("loggedIn");
     for (let i = 0; i < userAccounts.length; i++){
         if (userAccounts[i].user === id) {
             return i;
@@ -19,34 +20,41 @@ fetchAccountEntry(id){
     }
     return -1;
 }
+
+function fetchUserData() {
+
+    // find account 
+    let entry = fetchAccountEntry();
+
+    if ((entry >= 0) && (entry < userAccounts.length)) {
+        nameIn.value = userAccounts[entry].name;
+        idIn.value = userAccounts[entry].user;
+       emailIn.value = userAccounts[entry].email;
+       pswdIn.value = userAccounts[entry].pswd;
+    } else {
+        // should no come here !!!!
+        alert("no user logged in ");
+    }
+}
+
+fetchUserData();
+
 function saveUserData() {
 
     // find account 
     let entry = fetchAccountEntry();
 
     if ((entry >= 0) && (entry < userAccounts.length)) {
-        userAccounts[etry].name = ;
-        userAccounts[etry].email = ;
-        userAccounts[etry].pswd = ;
+        userAccounts[entry].name = nameIn.value ;
+        userAccounts[entry].email = emailIn.value;
+        userAccounts[entry].pswd = pswdIn.value;
+        storeUsers();
     } else {
-        // should no come here
+        // should no come here !!!!
         alertt("no user logged in ");
     }
 
-
-    /*
-    nameIn.removeAttribute("readonly");
-    idIn.removeAttribute("readonly");
-    emailIn.removeAttribute("readonly");
-    pswdIn.removeAttribute("readonly");
-
-    confPswdLabel.removeAttribute("hidden");
-    confPswdIn.removeAttribute("hidden");
-    confPswdIn.removeAttribute("readonly");
-    */
 }
-
-//editUserData();
 
 function enableEdit(set) {
     nameIn.readOnly = set;
@@ -63,17 +71,12 @@ editSaveBtn.addEventListener("click", (e) => {
         // Exit edit mode and save updates
         editMode = false;
         editSaveBtn.innerText = "Edit";
-        enableEdit(editMode);
+        enableEdit(!editMode);
         saveUserData();
-
     } else {
         // Enter edit mode
-        editMode = false;
+        editMode = true;
         editSaveBtn.innerText = "Save";
-        enableEdit(editMode);
-
+        enableEdit(!editMode);
     }
-
-
-
 });
