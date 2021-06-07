@@ -10,6 +10,7 @@ let navHTML;
 
 function createMenu() {
     let menu = $("<ul>");
+    menu.attr("id","menuTable");
 
     // profile menu item
     let lipro = $("<li>");

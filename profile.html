@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile-PrefRest</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/profile.css" />
     <script>
         /*
         https://stackoverflow.com/questions/33137525/redirect-user-if-not-logged-in-in-html-with-jquery
@@ -36,10 +37,52 @@
     <!-- https://stackoverflow.com/questions/31954089/how-can-i-reuse-a-navigation-bar-on-multiple-pages
     -->
     <div id="menu-placeholder"></div>
+    <div id="profileForm">
+        <div id="profileData">
+            <!-- user image -->
+            <img src="./assets/images/face.jpg" id="userImg" alt="user picture" width="220" height="220">
+            <!--  -->
+            <div id="profileitems">
+                <ul>
+                    <li>
+                       <div class="profilelabel"> <text  id="namelabel">Name:</text></div>
+                        <input type="text" class="profileInput" id="nameinput" size="40" readonly></input>
+                    </li>
+                    
+                    <li>
+                       <div class="profilelabel"> <text  id="emaillable" >email:</text></div>
+                        <input type="text" class="profileInput" id="emailinput" size="40" readonly></input>
+                    </li>
+                    <li>
+                        <div class="profilelabel"> <text class="profilelabel" id="idlabel">ID:</text> </div>
+                        <input type="text" class="profileInput" id="idinput" size="40" readonly></input>
+                    </li>
+                    <li>
+                        <div class="profilelabel"> <text class="profilelabel" id="pswdlabel">password:</text> </div>
+                        <input type="text" class="profileInput" id="pswdinput" size="40" readonly></input>
+                    </li>
+
+                    <li>
+                        <div class="profilelabel"> <text class="profilelabel" id="confpswdlabel" hidden> confirm password:</text> </div>
+                        <input type="text" class="profileInput" id="confpswdinput" size="40" readonly hidden></input>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <button id="usreditBtn">Edit</button>
+        </div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/js/storage.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/profile.js"></script>
 </body>
 
 </html>

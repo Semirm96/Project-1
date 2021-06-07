@@ -5,12 +5,10 @@ Login and signup CS styling
 #main {
     display:flex;
     flex-direction: column;
-    /*background-color: red;*/
 }
 
 #signtitle {
     background-color: green;
-
 }
 
 #entry {
