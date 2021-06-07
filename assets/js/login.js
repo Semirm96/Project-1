@@ -7,7 +7,8 @@ const loginButton = document.getElementById("loginComp")
 const loginInvalid = document.getElementById("loginMsg")
 
 function verifyLogin(id, pswd) {
-    let accounts = getFromSession("useraccounts");
+    getUsers(); /*getFromSession("useraccounts");*/
+    let accounts = userAccounts;
 
     if ( (accounts === null) || (accounts.lenght === 0)) {
         return false;
@@ -38,7 +39,7 @@ loginButton.addEventListener("click", (e) => {
     } else {
         
         loginInvalid.innerText = "Invalid login, please try again.";
-        setTimeout(function(){ window.location.assign("index.html") }, 2000);
+        setTimeout(function(){ window.location.assign("index.html") }, 1500);
         return false;
     }
 });

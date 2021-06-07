@@ -2,6 +2,8 @@
 profile page functionality
 */
 
+const usrImg = document.getElementById("userImg");
+const imgSel = document.getElementById("imgSelect");
 const nameIn = document.getElementById("nameinput");
 const idIn = document.getElementById("idinput");
 const emailIn = document.getElementById("emailinput");
@@ -51,7 +53,7 @@ function saveUserData() {
         storeUsers();
     } else {
         // should no come here !!!!
-        alertt("no user logged in ");
+        alert("no user logged in ");
     }
 
 }
@@ -80,3 +82,33 @@ editSaveBtn.addEventListener("click", (e) => {
         enableEdit(!editMode);
     }
 });
+
+usrImg.addEventListener("click", (e) =>  {
+    // creating input on-the-fly
+    var input = $(document.createElement("input"));
+    input.attr("type", "file");
+    input.attr("value", "./assets/images/")
+    // add onchange handler if you wish to get the file :)
+    input.trigger("click"); // opening dialog
+    return false; // avoiding navigation
+});
+
+/* Found interesting way to select images
+http://jsfiddle.net/Bwj2D/11/
+
+A way to save the image in the localStorage
+
+*/
+imgSel.addEventListener("change", (e) => {
+   
+        var file = /*document.getElementById('imgSel')*/imgSel.files[0];
+        var reader  = new FileReader();
+        reader.onload = function(e)  {
+            //var image = document.createElement("img");
+            usrImg.src = e.target.result;
+           // document.body.appendChild(image);
+         }
+         reader.readAsDataURL(file);
+     
+});
+

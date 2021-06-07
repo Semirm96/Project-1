@@ -16,6 +16,11 @@
     flex:1;
 }
 
+#imgHolder {
+  display: flex;
+  flex-direction: column;
+}
+
 #profileitems {
     flex:5;
   margin: 0;
