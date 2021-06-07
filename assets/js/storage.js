@@ -18,7 +18,6 @@ https://stackoverflow.com/questions/2799283/use-a-json-array-with-objects-with-j
 var user = { "name": "", "user": "", "email": "", "pswd": "" };
 var userAccounts = {};
 
-
 // get from localStorage
 function getFromLocal(objName) {
     try {

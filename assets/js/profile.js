@@ -11,7 +11,30 @@ const confPswdIn = document.getElementById("confpswdinput");
 const editSaveBtn = document.getElementById("usreditBtn");
 let editMode = false;
 
+fetchAccountEntry(id){
+    for (let i = 0; i < userAccounts.length; i++){
+        if (userAccounts[i].user === id) {
+            return i;
+        }
+    }
+    return -1;
+}
 function saveUserData() {
+
+    // find account 
+    let entry = fetchAccountEntry();
+
+    if ((entry >= 0) && (entry < userAccounts.length)) {
+        userAccounts[etry].name = ;
+        userAccounts[etry].email = ;
+        userAccounts[etry].pswd = ;
+    } else {
+        // should no come here
+        alertt("no user logged in ");
+    }
+
+
+    /*
     nameIn.removeAttribute("readonly");
     idIn.removeAttribute("readonly");
     emailIn.removeAttribute("readonly");
@@ -20,6 +43,7 @@ function saveUserData() {
     confPswdLabel.removeAttribute("hidden");
     confPswdIn.removeAttribute("hidden");
     confPswdIn.removeAttribute("readonly");
+    */
 }
 
 //editUserData();
