@@ -37,10 +37,7 @@ loginButton.addEventListener("click", (e) => {
         return true;
     } else {
         
-       // alert("Login was unsuccessful, please register or check your username and password");
-        //loginInvalid.css("color","red");
-        loginInvalid.innerText = "invalid login, please try again....";
-        
+        loginInvalid.innerText = "invalid login, please try again....")   
         setTimeout(function(){ window.location.assign("index.html") }, 2000);
         return false;
     }

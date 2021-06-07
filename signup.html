@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome To Registration Form</title>
+    <meta charset="UTF -8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/signuplogin.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="signtitle">
+            <h1>Create Your Account</h1>
+        </div>
+        <div id="entry">
+            <form id="entryform">
+                <!--values needed -->
+                <table cellspacing="4" align="left" cellpadding="5" border="0">
+                    <!--Table for all nec. values for signup-->
+                    <!--Tr refer to link for https://www.w3schools.com/tags/tag_table.asp-->
+                    <!--Using https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types to reference for type usage -->
+                    <tr>
+                        <td><input type="text" placeholder="Full Name" id="name"></td>
+                    </tr>
+                    <tr>
+                        <!--CSS > align="center">Username:-->
+                        <td><input type="text" placeholder="Username"  id="user" /></td>
+                    </tr>
+                    <tr>
+                        <!--CSS > align="center">Email:-->
+                        <td><input type="text" placeholder="Enter Email" autocomplete="email" id="email" /></td>
+                    </tr>
+                    <tr>
+                        <!--CSS > align="center">Password: -->                    
+                        <td><input type="password" placeholder="Enter Password" autocomplete="new-password" id="psw" /></td>
+                    
+                    </tr>
+                    <tr>
+                        <!--CSS > align="center">Confrim Password:-->
+                        <td> <input type="password" placeholder="Confirm Password" autocomplete="new-password" id="conPsw" /></td>
+                    </tr>
+                
+                <!-- </container> -->
+                <!--container close -->
+                <tr>
+                    <!--Submit button -->
+                    <td><input type="button" value="Create Account" id="button" onclick="createAccnt()" /></td>
+                </tr>
+                </table>
+            </form>
+            <h2 id="signupMsg">rrr</h2>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="./assets/js/script.js"></script> -->
+    <script src="./assets/js/storage.js"></script>
+    <script src="./assets/js/signup.js"></script>
+</body>
+
+</html>

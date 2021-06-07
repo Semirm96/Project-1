@@ -103,7 +103,7 @@ function createAccnt() {
         } else {
             //alert("User already registered.");
             // print success and, after a few second, redirect to login
-            $("#signupMsg").attr("color","red");
+            $("#signupMsg").css("color","red");;
             $("#signupMsg").text("User already registered.");
             
             setTimeout(function(){ window.location.assign("signup.html") }, 3000);
