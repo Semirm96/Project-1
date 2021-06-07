@@ -52,11 +52,11 @@ button {
 }
 
 button:active {
-  transform: scale(2);
+  transform: scale(.9);
 }
 
 form {
-  background-color: #ffffff;
+ /* background-color: #ffffff;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,12 +67,12 @@ form {
 }
 
 input {
-  background-color: #eee;
+  /*background-color: #eee;*/
   border: none;
   padding: 15px 17px;
   margin: 8px 0;
   width: 100%;
-  border-radius: 2px;
+  border-radius: 10px;
 }
 
 .social:hover {

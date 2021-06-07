@@ -5,6 +5,7 @@
     <title>Welcome To Registration Form</title>
     <meta charset="UTF -8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/signup.css">
 </head>
 
@@ -15,13 +16,16 @@
                 <h1>Create Account</h1>
                 
 
-                <input type="text" placeholder="Full Name" />
-                <input type="text" placeholder="Username Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <input type="password" placeholder="Confirm Password" />
-                <button>Sign Up</button>
+                <input type="text" id="name" placeholder="Full Name" />
+                <input type="text" id="user" placeholder="Username Name" />
+                <input type="email" id="email" placeholder="Email" />
+                <input type="password" id="psw" placeholder="Password" />
+                <input type="password" id="conPsw" placeholder="Confirm Password" />
+                <!-- <button>Sign Up</button> -->
+                <button type="button" value="Create Account" id="button" onclick="createAccnt()">Sign up</button>
+                <button type="submit" formaction="index.html">Cancel</button>
             </form>
+            <h2 id="signupMsg"></h2>
         </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- <script src="./assets/js/script.js"></script> -->

@@ -49,16 +49,17 @@ button {
   font-size: 12px;
   font-weight: bold;
   padding: 12px 45px;
+  margin-bottom: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 button:active {
-  transform: scale(2);
+  transform: scale(.9);
 }
 
 form {
-  background-color: #ffffff;
+ /* background-color: #ffffff;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,8 +70,9 @@ form {
 }
 
 input {
-  background-color: #eee;
+  /*background-color: #eee;*/
   border: none;
+  border-radius: 10px;
   padding: 12px 15px;
   margin: 8px 0;
   width: 100%;
