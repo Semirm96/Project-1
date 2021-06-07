@@ -37,7 +37,7 @@ loginButton.addEventListener("click", (e) => {
         return true;
     } else {
         
-        loginInvalid.innerText = "invalid login, please try again....")   
+        loginInvalid.innerText = "Invalid login, please try again.";
         setTimeout(function(){ window.location.assign("index.html") }, 2000);
         return false;
     }
