@@ -60,8 +60,8 @@ function insertMenu() {
     
     let usrImg = $("<img>");
     usrImg.attr("id", "menuUsrImg");
-    usrImg.attr("width", "40");
-    usrImg.attr("height", "40");
+    usrImg.attr("width", "45");
+    usrImg.attr("height", "45");
     $("#menu-placeholder").append(usrImg);
 
     let userLogged = $("<text>");
