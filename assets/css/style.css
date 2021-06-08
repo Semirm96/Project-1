@@ -8,32 +8,30 @@ body {
 Menu CSS styling
 */
 h1 {
-    color: red;
+    color:rgb(51, 28, 185);
 }
 
 #menu-placeholder {
     display:flex;
     justify-content: space-between;
- /*border-bottom: 2px;*/
  border-bottom: 4px rgb(51, 28, 185) solid;
   width: 100%;
 }
 
-ul {
+#menuTable /*ul*/ {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow:hidden; /*Important for the DIV background, investigate*/
-    /*border-bottom: 4px rgb(51, 28, 185) solid;  underline menu color*/
   }
   
-  li {
+  #menuTable  li {
     float:left;
     background-color:rgb(158, 149, 209); /*deselected menu*/
     margin-right: 10px;
   }
 
-  li a {
+  #menuTable li a {
       display:inline-block;
       color : white;
       text-align: center;
@@ -46,19 +44,16 @@ ul {
   https://www2.cs.sfu.ca/CourseCentral/165/common/study-guide/content/css-selectors.html
 
   */
-  li:hover:not(.active) {
+  #menuTable li:hover:not(.active) {
       background-color:rgb(200, 195, 223); /* menu hover color*/
   }
 
-  .active {
+  #menuTable .active {
   background-color:rgb(51, 28, 185); /*active page menu color*/
   }
 
   #userLogged{
     align-self: center;
     color:blue;
-    font-size: 18px;
+    font-size: 24px;
   }
-  /*
-
-  */
