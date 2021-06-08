@@ -50,6 +50,12 @@ function saveUserData() {
         userAccounts[entry].name = nameIn.value ;
         userAccounts[entry].email = emailIn.value;
         userAccounts[entry].pswd = pswdIn.value;
+        if (imgSel.value === "") {
+            userAccounts[entry].imgSrc = "./assets/images/face.jpg";
+        } else {
+            userAccounts[entry].imgSrc = "./assets/images/" + imgSel.value;
+        }
+        
         storeUsers();
     } else {
         // should no come here !!!!
