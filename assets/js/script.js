@@ -60,6 +60,8 @@ function insertMenu() {
     
     let usrImg = $("<img>");
     usrImg.attr("id", "menuUsrImg");
+    usrImg.attr("width", "40");
+    usrImg.attr("height", "40");
     $("#menu-placeholder").append(usrImg);
 
     let userLogged = $("<text>");
@@ -71,11 +73,13 @@ function insertMenu() {
     try {
          
         let logged = getFromSession("loggedIn");
+        let userObj = userAccounts.find(o => o.user === logged);
          
          if (logged === null) {
              $("#userLogged").text("NO USER LOGGED, DEBUG MODE !!!!");
          } else {
-           $("#userLogged").text(logged);  
+             $("#menuUsrImg").attr("src", userObj.imgSrc);
+           $("#userLogged").text(userObj.name + "[" + logged + "]" );  
          }
     }catch(err){
         // should not come here

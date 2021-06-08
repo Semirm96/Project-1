@@ -32,7 +32,8 @@ function fetchUserData() {
         nameIn.value = userAccounts[entry].name;
         idIn.value = userAccounts[entry].user;
        emailIn.value = userAccounts[entry].email;
-       pswdIn.value = userAccounts[entry].pswd;
+        pswdIn.value = userAccounts[entry].pswd;
+        usrImg.src = userAccounts[entry].imgSrc;
     } else {
         // should no come here !!!!
         alert("no user logged in ");
@@ -53,7 +54,7 @@ function saveUserData() {
         if (imgSel.value === "") {
             userAccounts[entry].imgSrc = "./assets/images/face.jpg";
         } else {
-            userAccounts[entry].imgSrc = "./assets/images/" + imgSel.value;
+            userAccounts[entry].imgSrc = "./assets/images/" + imgSel.files[0].name;
         }
         
         storeUsers();
@@ -72,6 +73,9 @@ function enableEdit(set) {
     confPswdLabel.hidden = set;
     confPswdIn.hidden = set;
     confPswdIn.readOnly = set;
+
+    imgSel.hidden = set;
+    imgSel.readonly = set;
 }
 
 editSaveBtn.addEventListener("click", (e) => {
@@ -112,6 +116,7 @@ imgSel.addEventListener("change", (e) => {
         reader.onload = function(e)  {
             //var image = document.createElement("img");
             usrImg.src = e.target.result;
+            $("#menuUsrImg").attr("src", e.target.result /* userAccounts.find(o => o.user === getFromSession("loggedIn")).imgSrc*/);
            // document.body.appendChild(image);
          }
          reader.readAsDataURL(file);
