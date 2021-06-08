@@ -15,7 +15,7 @@ let editMode = false;
 
 function fetchAccountEntry() {
     let id = getFromSession("loggedIn");
-    for (let i = 0; i < userAccounts.length; i++){
+    for (let i = 0; i < userAccounts.length; i++) {
         if (userAccounts[i].user === id) {
             return i;
         }
@@ -31,8 +31,9 @@ function fetchUserData() {
     if ((entry >= 0) && (entry < userAccounts.length)) {
         nameIn.value = userAccounts[entry].name;
         idIn.value = userAccounts[entry].user;
-       emailIn.value = userAccounts[entry].email;
-       pswdIn.value = userAccounts[entry].pswd;
+        emailIn.value = userAccounts[entry].email;
+        pswdIn.value = userAccounts[entry].pswd;
+        usrImg.src = userAccounts[entry].imgSrc;
     } else {
         // should no come here !!!!
         alert("no user logged in ");
@@ -47,15 +48,15 @@ function saveUserData() {
     let entry = fetchAccountEntry();
 
     if ((entry >= 0) && (entry < userAccounts.length)) {
-        userAccounts[entry].name = nameIn.value ;
+        userAccounts[entry].name = nameIn.value;
         userAccounts[entry].email = emailIn.value;
         userAccounts[entry].pswd = pswdIn.value;
-        if (imgSel.value === "") {
-            userAccounts[entry].imgSrc = "./assets/images/face.jpg";
-        } else {
-            userAccounts[entry].imgSrc = "./assets/images/" + imgSel.value;
+        if (imgSel.value != "") {
+            // if user selected a new picture, update their profile pic
+            userAccounts[entry].imgSrc = "./assets/images/" + imgSel.files[0].name;
+            $("#menuUsrImg").attr("src", userAccounts[entry].imgSrc);
         }
-        
+
         storeUsers();
     } else {
         // should no come here !!!!
@@ -72,6 +73,9 @@ function enableEdit(set) {
     confPswdLabel.hidden = set;
     confPswdIn.hidden = set;
     confPswdIn.readOnly = set;
+
+    imgSel.hidden = set;
+    imgSel.readonly = set;
 }
 
 editSaveBtn.addEventListener("click", (e) => {
@@ -89,12 +93,11 @@ editSaveBtn.addEventListener("click", (e) => {
     }
 });
 
-usrImg.addEventListener("click", (e) =>  {
+usrImg.addEventListener("click", (e) => {
     // creating input on-the-fly
     var input = $(document.createElement("input"));
     input.attr("type", "file");
     input.attr("value", "./assets/images/")
-    // add onchange handler if you wish to get the file :)
     input.trigger("click"); // opening dialog
     return false; // avoiding navigation
 });
@@ -102,19 +105,19 @@ usrImg.addEventListener("click", (e) =>  {
 /* Found interesting way to select images
 http://jsfiddle.net/Bwj2D/11/
 
-A way to save the image in the localStorage
+Saving the name of the file within user account in localStorage
 
 */
 imgSel.addEventListener("change", (e) => {
-   
-        var file = /*document.getElementById('imgSel')*/imgSel.files[0];
-        var reader  = new FileReader();
-        reader.onload = function(e)  {
-            //var image = document.createElement("img");
-            usrImg.src = e.target.result;
-           // document.body.appendChild(image);
-         }
-         reader.readAsDataURL(file);
-     
+
+    var file = /*document.getElementById('imgSel')*/imgSel.files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        // showing image in profile placeholder, not in the
+        // top menu yet because user has nott clicked on "save"
+        usrImg.src = e.target.result;
+    }
+    reader.readAsDataURL(file);
+
 });
 
