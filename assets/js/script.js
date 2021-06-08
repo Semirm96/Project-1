@@ -73,6 +73,10 @@ function insertMenu() {
     try {
          
         let logged = getFromSession("loggedIn");
+        /*
+        Found short way to find a match in an array of objects
+        https://stackoverflow.com/questions/12462318/find-a-value-in-an-array-of-objects-in-javascript
+        */
         let userObj = userAccounts.find(o => o.user === logged);
          
          if (logged === null) {
