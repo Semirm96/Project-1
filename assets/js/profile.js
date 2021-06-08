@@ -51,9 +51,8 @@ function saveUserData() {
         userAccounts[entry].name = nameIn.value ;
         userAccounts[entry].email = emailIn.value;
         userAccounts[entry].pswd = pswdIn.value;
-        if (imgSel.value === "") {
-            userAccounts[entry].imgSrc = "./assets/images/face.jpg";
-        } else {
+        if (imgSel.value != "") {
+            // if user selected a new picture, update their profile pic
             userAccounts[entry].imgSrc = "./assets/images/" + imgSel.files[0].name;
         }
         
