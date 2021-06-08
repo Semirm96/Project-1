@@ -6,7 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preferences-PrefRest</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <link rel="stylesheet" href="./assets/js/preferences.js">
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <script>
         /*
         https://stackoverflow.com/questions/33137525/redirect-user-if-not-logged-in-in-html-with-jquery
@@ -37,10 +45,42 @@
     -->
     <div id="menu-placeholder"></div>
 
+    <div class="container">
+        <label>
+            <input type="checkbox" class="filled-in" id="American" value="American" />
+            <span>American</span>
+        </label>
+        <label>
+            <input type="checkbox" class="filled-in" id="Chinese" value="Chinese" />
+            <span>Chinese</span>
+        </label>
+        <label>
+            <input type="checkbox" class="filled-in" id="Indian" value="Indian" />
+            <span>Indian</span>
+        </label>
+        <label>
+            <input type="checkbox" class="filled-in" id="Italian" value="Italian" />
+            <span>Italian</span>
+        </label>
+        <label>
+            <input type="checkbox" class="filled-in" id="Thai" value="Thai" />
+            <span>Thai</span>
+        </label>
+        <label>
+            <input type="checkbox" class="filled-in" id="Mexican" value="Mexican" />
+            <span>Mexican</span>
+        </label>
 
+        <button type="button" id="button">Search</button>
+    </div>
+
+    <div id="holding"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/storage.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/preferences.js"></script>
+
 </body>
 
 </html>

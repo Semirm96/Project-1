@@ -1,0 +1,25 @@
+.myScroll {
+    overflow-y: auto;
+    max-height: 83%;
+    width: auto;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    font-size: 12px !important;
+}
+
+.marginSet {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    margin-left: 5px !important;
+    margin-bottom: 5px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+}
+
+.fontsize {
+    font-size: 14px !important;
+}
