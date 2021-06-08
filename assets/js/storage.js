@@ -15,7 +15,7 @@ var obj2;
 https://stackoverflow.com/questions/2799283/use-a-json-array-with-objects-with-javascript
 */
 //user account variables
-var user = { "name": "", "user": "", "email": "", "pswd": "" };
+var user = { "name": "", "user": "", "email": "", "pswd": "", "imgSrc": "" };
 var userAccounts = {};
 
 // get from localStorage
@@ -82,7 +82,7 @@ https://stackoverflow.com/questions/43762363/how-to-store-an-array-of-objects-in
 */
 function getUsers() {
     try {
-        let session = getFromSession("useraccounts")
+        let session = /*getFromSession*/getFromLocal("useraccounts")
         if (session != null) {
             let val = session;
             if (val != undefined) {
@@ -100,7 +100,7 @@ function getUsers() {
 getUsers();
 
 function storeUsers() {
-    setToSession("useraccounts", userAccounts);
+    /*setToSession*/setToLocal("useraccounts", userAccounts);
 };
 
 function addUser(name, usrName,email, pswd) {
@@ -112,5 +112,5 @@ function addUser(name, usrName,email, pswd) {
     newUsr.pswd = pswd;
 
     userAccounts.push(newUsr);
-    setToSession("useraccounts", userAccounts);
+    /*setToSession*/setToLocal("useraccounts", userAccounts);
 };
