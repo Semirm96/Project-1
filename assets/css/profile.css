@@ -1,3 +1,55 @@
+
+#profileForm {
+    display:flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+}
+
+#profileData{
+    display:flex;
+    flex-direction: row;
+    margin-top:15px;
+}
+
+#userImg {
+    flex:1;
+}
+
+#imgHolder {
+  display: flex;
+  flex-direction: column;
+}
+
+#profileitems {
+    flex:5;
+  margin: 0;
+  padding:0;
+}
+
+.profileInput {
+  size:40;
+}
+
+.profileInput:read-only {
+  background-color: rgb(233, 233, 233);
+}
+
+#profileData ul {
+     list-style-type: none;
+     padding-left:20px;
+     padding: 0px 10px;
+     margin:0px;
+}
+
+#profileData ul li {
+ margin-bottom:2px;
+}
+
+#usreditBtn {
+    margin-top:15px;
+  width: 200px;
+  border-radius: 5px;;
 /*
 Login and signup CS styling
 */
@@ -54,3 +106,4 @@ input {
   margin: 8px 0;
   width: 100%;
 }
+

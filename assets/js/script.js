@@ -10,6 +10,7 @@ let navHTML;
 
 function createMenu() {
     let menu = $("<ul>");
+    menu.attr("id","menuTable");
 
     // profile menu item
     let lipro = $("<li>");
@@ -59,6 +60,8 @@ function insertMenu() {
     
     let usrImg = $("<img>");
     usrImg.attr("id", "menuUsrImg");
+    usrImg.attr("width", "45");
+    usrImg.attr("height", "45");
     $("#menu-placeholder").append(usrImg);
 
     let userLogged = $("<text>");
@@ -70,11 +73,17 @@ function insertMenu() {
     try {
          
         let logged = getFromSession("loggedIn");
+        /*
+        Found short way to find a match in an array of objects
+        https://stackoverflow.com/questions/12462318/find-a-value-in-an-array-of-objects-in-javascript
+        */
+        let userObj = userAccounts.find(o => o.user === logged);
          
          if (logged === null) {
              $("#userLogged").text("NO USER LOGGED, DEBUG MODE !!!!");
          } else {
-           $("#userLogged").text(logged);  
+             $("#menuUsrImg").attr("src", userObj.imgSrc);
+           $("#userLogged").text(userObj.name + "[" + logged + "]" );  
          }
     }catch(err){
         // should not come here
