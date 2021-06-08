@@ -91,6 +91,10 @@ myButton.onclick = function () {
 const createSections = () => {
     const myCheckboxes = document.querySelectorAll('input:checked')
 
+    // DELETE elements from previous search !!!
+    //myHolding
+    $("#holding").empty();
+
     for (let index = 0; index < myCheckboxes.length; index++) {
 
         const mySearch = myFetch + `&cuisine=${myCheckboxes[index].value}`;
