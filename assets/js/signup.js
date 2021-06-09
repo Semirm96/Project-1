@@ -36,64 +36,61 @@ function createAccnt() {
     let charec = /(a-z,A-Z,0-9_)(a-zA-Z0-9\-)(?=.*?[#?!@$%^&*-])/;
     */
 
-    let pswExp = /^(([a-zA-Z0-9 ~!@#$%^&*-_.?]{8,})*?)$/ /* "^ (?=.*? [A - Z])(?=.*? [a - z])(?=.*? [0 - 9])(?=.*? [# ? !@$ %^&* -]).{ 8,} $" */
-    let letters = /^([a-zA-Z ]*?)$/
-    let charec = "^ (?=.*? [A - Z])(?=.*? [a - z])(?=.*? [0 - 9])(?=.*? [# ? !@$ %^&* -]).{ 8,} $"
-
+    const pswExp = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,12}$/.global
+    const letters = /^(?=.*?[A-Z])(?=.*?[a-z])$/.global
+    const charec = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-])$/.global
     
         if (fullName == "") {
             alert('Name needed');
             valid = false;
-        }
-        else if (!letters.test(fullName)) {
+    }else if (!letters.test(fullName)) {
             alert('Name field required only alphabet characters');
             valid = false;
-        }
+    }
     
-        if (user == "") {
+    if (user == "") {
             alert('Username needed');
             valid = false;
-        }
-        else if (!charec.test(user)) {
+    }else if (!charec.test(user)) {
             alert('Username field required only alphabet characters');
             valid = false;
-        }
+    }
     
-        if (email == "") {
+    if (email == "") {
             alert('Email needed');
             valid = false;
-        }
-        else if (!letter.test(email)) {
+    }else if (!letter.test(email)) {
             alert(' Email Invalid ');
             valid = false;
-        }
+    }
     
-        else if (pwd == '') {
-            alert('Please enter Password');
+    if (pwd == '') {
+        alert('Please enter Password');
             valid = false;
-        }
-        else if (confPwd == '') {
-            alert('Enter Confirm Password');
+    }
+    else if (!pswExp.test(pwd)) {
+        alert('Password does not meet criteria. Upper case, Lower case, Special character and Numeric letter are required in Password filed');
             valid = false;
-        }
-        else if (!pswExp.test(pwd)) {
-            alert('Password does not meet criteria. Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+    }
+            
+    if (confPwd == '') {
+       alert('Enter Confirm Password');
             valid = false;
-        }
-        else if (pwd != confPwd) {
-            alert('Passwords do not match');
+    }else if (pwd != confPwd) {
+          alert('Passwords do not match');
             valid = false;
-        }
+    }
     
-        if (document.getElementById("pws").value.length < 8) {
+    if (document.getElementById("pws").value.length < 8) {
             alert('Password minimum length is 8');
             valid = false;
-        }
-    
-        if (document.getElementById("pws").value.length > 12) {
+
+    }
+
+    if (document.getElementById("pws").value.length > 12) {
             alert('Password max length is 12');
             valid = false;
-        }
+    }
     
     if (valid) {
 
