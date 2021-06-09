@@ -122,7 +122,7 @@ const createSections = () => {
         const myHeader = document.createElement("h2");
         myHeader.innerText = myCheckboxes[index].value;
         myHeader.style =
-          "text-align: center; margin-top:30px; font-size: 66px; font-weight: bold; color:blue; width:100%;";
+          "text-align: center; margin-top:30px; margin-bottom:20px; font-size: 66px; font-weight: bold; color:blue; width:100%;";
 
         const myRow = document.createElement("div");
         myRow.className = "row";

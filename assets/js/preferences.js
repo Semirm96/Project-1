@@ -115,7 +115,7 @@ const createSections = () => {
                // for (let index = 0; index < myCheckboxes.length; index++) {
                     const myHeader = document.createElement("h2");
                     myHeader.innerText = myCheckboxes[index].value;
-                    myHeader.style = "text-align: center; margin-top:30px; font-size: 66px; font-weight: bold; color:blue;";
+                    myHeader.style = "text-align: center; margin-top:30px; margin-bottom:20px; font-size: 66px; font-weight: bold; color:blue;";
 
 
 
