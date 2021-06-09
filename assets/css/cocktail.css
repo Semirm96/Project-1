@@ -23,3 +23,18 @@
 .fontsize {
     font-size: 14px !important;
 }
+.container {
+    margin-top: 10px;
+    align-items: middle;
+}
+
+label {
+    color:black;
+}
+
+span {
+    padding: 0px 23px !important;
+    font-size:24px !important;
+    padding-bottom:5px !important;
+
+}

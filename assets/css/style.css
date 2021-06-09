@@ -3,7 +3,8 @@ common CSS file
 */
 body {
     background-color:rgb(241, 241, 250); /* whole page bg color*/
-}
+    margin: 0px;
+  }
 /*
 Menu CSS styling
 */
